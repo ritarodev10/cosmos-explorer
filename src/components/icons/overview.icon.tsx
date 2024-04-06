@@ -1,6 +1,6 @@
 import { IconProps } from "@/types/common.type";
 
-const DashboardIcon: React.FC<IconProps> = ({
+const OverviewIcon: React.FC<IconProps> = ({
   color = "#1877F2",
   className,
 }) => {
@@ -26,4 +26,4 @@ const DashboardIcon: React.FC<IconProps> = ({
   );
 };
 
-export default DashboardIcon;
+export default OverviewIcon;

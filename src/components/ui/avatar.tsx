@@ -66,14 +66,14 @@ export const Avatar = ({
                 rotate: rotate,
                 whiteSpace: "nowrap",
               }}
-              className="absolute -top-[72px] -left-1/2 -translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-[#14272A] z-50 shadow-xl px-4 py-2"
+              className="absolute -top-[72px] -left-1/2 -translate-x-1/2 flex text-xs flex-col items-center justify-center backdrop-blur-sm rounded-md border border-[#3a4b42] z-50 shadow-xl px-4 py-2"
             >
               <div className="absolute inset-x-1/2 -translate-x-1/2 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
               <div className="absolute left-1/2 -translate-x-1/2 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent h-px " />
-              <div className="font-bold text-slate-400 relative z-30 text-base">
+              <div className="font-bold text-neutral-400 relative z-30 text-base">
                 {name}
               </div>
-              <div className="text-slate-400 text-xs">{designation}</div>
+              <div className="text-neutral-400 text-xs">{designation}</div>
             </motion.div>
           )}
         </AnimatePresence>

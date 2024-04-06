@@ -1,6 +1,6 @@
 import {
   BlockIcon,
-  DashboardIcon,
+  OverviewIcon,
   ProposalIcon,
   TransactionIcon,
   ValidatorIcon,
@@ -8,19 +8,9 @@ import {
 
 export const sidebarItems = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: DashboardIcon,
-  },
-  {
-    path: "/proposals",
-    name: "Proposals",
-    icon: ProposalIcon,
-  },
-  {
-    path: "/transactions",
-    name: "Transactions",
-    icon: TransactionIcon,
+    path: "/overview",
+    name: "Overview",
+    icon: OverviewIcon,
   },
   {
     path: "/validators",
@@ -31,5 +21,15 @@ export const sidebarItems = [
     path: "/blocks",
     name: "Blocks",
     icon: BlockIcon,
+  },
+  {
+    path: "/proposals",
+    name: "Proposals",
+    icon: ProposalIcon,
+  },
+  {
+    path: "/transactions",
+    name: "Transactions",
+    icon: TransactionIcon,
   },
 ];

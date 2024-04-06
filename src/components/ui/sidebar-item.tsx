@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/common.utils";
 
 type SidebarItemProps = {
   item: {
@@ -21,6 +21,7 @@ type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 const SidebarItem: React.FC<SidebarItemProps> = ({ item, idx, location }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [direction, setDirection] = useState<Direction>("TOP");
+  const isActive = location.pathname === item.path;
 
   const rotateDirection = (currentDirection: Direction): Direction => {
     const directions: Direction[] = ["TOP", "LEFT", "BOTTOM", "RIGHT"];
@@ -54,10 +55,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, idx, location }) => {
       to={item.path}
       className="relative group h-14 w-full block"
     >
-      {/* <AnimatePresence>
+      <AnimatePresence>
         {hoveredIndex === idx && (
           <motion.span
-            className="absolute inset-0 h-12 w-full bg-[#1F262E] rounded-lg"
+            className="absolute inset-0 h-12 w-full bg-neutral-900 bg-opacity-65 backdrop-blur-sm rounded-lg"
             layoutId="hoverBackground"
             initial={{ opacity: 0 }}
             animate={{
@@ -70,28 +71,26 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, idx, location }) => {
             }}
           />
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
       <div
         className={`${
-          location.pathname === item.path &&
-          "bg-[#14272A] hover:bg-[#123230] border "
+          isActive &&
+          "bg-neutral-950 backdropblur-[2px] hover:bg-[#0c1e1e] border "
         } flex gap-4 px-3 rounded-xl h-12 items-center relative hover:text-neutral-950 border-[#3a4b42] transition-all duration-100 ease-in-out z-20`}
       >
         <item.icon
           className="w-6 h-6"
-          color={location.pathname === item.path ? "#5be49b" : "#919eab"}
+          color={isActive ? "#5be49b" : "#737373"}
         />
         <div
           className={`${
-            location.pathname === item.path
-              ? "text-[#5be49b]"
-              : "text-[#919eab]"
-          } text-sm`}
+            isActive ? "text-[#5be49b]" : "text-neutral-500"
+          } text-sm font-semibold`}
         >
           {item.name}
         </div>
       </div>
-      {/* {location.pathname === item.path && (
+      {isActive && (
         <motion.div
           className={cn(
             "flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]"
@@ -110,7 +109,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, idx, location }) => {
           }}
           transition={{ ease: "linear", duration: 1 }}
         />
-      )} */}
+      )}
     </Link>
   );
 };
