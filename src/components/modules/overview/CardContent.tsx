@@ -38,8 +38,8 @@ export const MarketDataCard = () => {
   const { priceChart, price } = useOverviewQuery();
 
   return (
-    <div className="grid lg:grid-cols-2">
-      <div className="w-full flex flex-col gap-2 pt-3">
+    <div className="grid lg:grid-cols-2 gap-4">
+      <div className="w-full flex flex-col gap-2 md:pt-3">
         <div className="w-full flex justify-between items-center">
           <div className="flex gap-4 items-center">
             <CosmosAtomIcon className="h-10 w-10" />

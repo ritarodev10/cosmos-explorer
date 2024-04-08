@@ -8,7 +8,6 @@ import {
   TokenomicsCard,
   ValidatorCard,
 } from "@/components/modules/overview/CardContent";
-import { motionVariants } from "@/config/animation.config";
 
 const Overview = () => {
   const { inflation, stakingAPR, supply, communityPool } = useOverviewQuery();

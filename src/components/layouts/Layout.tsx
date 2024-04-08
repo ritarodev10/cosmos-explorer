@@ -10,9 +10,9 @@ const Layout = () => {
         <div>
           <Sidebar />
         </div>
-        <div className="flex flex-col ml-64">
+        <div className="flex flex-col lg:ml-64">
           <Navbar />
-          <main className="container pt-20 pb-10 px-10">
+          <main className="container pt-20 pb-10 px-4 md:px-10">
             <Outlet />
           </main>
         </div>

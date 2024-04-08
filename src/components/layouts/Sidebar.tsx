@@ -10,7 +10,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="h-screen border-r border-dashed fixed border-neutral-800 w-64 z-10">
+    <div className="h-screen border-r border-dashed fixed border-neutral-800 w-64 z-10 hidden lg:block">
       <div className="h-full w-full bg-background  bg-dot-white/[0.2] relative">
         <div className="absolute pointer-events-none inset-0 bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="h-full flex flex-col z-30 relative">
