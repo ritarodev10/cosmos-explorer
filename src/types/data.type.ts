@@ -96,7 +96,8 @@ type Block = {
 };
 
 type Data = {
-  txs: string[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  txs: any;
 };
 
 export type PriceDataResponse = {
@@ -140,4 +141,49 @@ export type BlockData = {
   time: string;
   proposer: Proposer;
   txs: number;
+};
+
+// Proposal Data Type
+type FinalTallyResult = {
+  yes: number;
+  abstain: number;
+  no: number;
+  no_with_veto: number;
+  finally_votes: boolean;
+};
+
+type TotalDeposit = {
+  amount: number;
+  denom: string;
+};
+
+export type ProposalResponse = {
+  id: number;
+  ttype: string;
+  details: Record<string, unknown>;
+  finalTallyResult: FinalTallyResult;
+  title: string;
+  description: string;
+  votingStart: string;
+  votingEnd: string;
+  depositEnd: string;
+  submitTime: string;
+  status: string;
+  totalDeposit: TotalDeposit;
+  proposer: Proposer;
+};
+
+export type ProposalData = {
+  id: number;
+  title: string;
+  type: string;
+  status: string;
+  votingEnd: string;
+};
+
+// Transaction Data Type
+export type TransactionData = {
+  height: string;
+  hash: string;
+  fees: number;
 };

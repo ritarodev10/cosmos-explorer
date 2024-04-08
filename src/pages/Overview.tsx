@@ -5,8 +5,10 @@ import {
   BlocksTableCard,
   Card,
   MarketDataCard,
+  TokenomicsCard,
   ValidatorCard,
 } from "@/components/modules/overview/CardContent";
+import { motionVariants } from "@/config/animation.config";
 
 const Overview = () => {
   const { inflation, stakingAPR, supply, communityPool } = useOverviewQuery();
@@ -20,8 +22,7 @@ const Overview = () => {
     {
       title: "Tokenomics",
       gridConfig: "xl:col-span-4",
-      component: Card,
-      props: { heading: "Tokenomics", value: "Coming Soon" },
+      component: TokenomicsCard,
     },
     {
       title: "Validator Stats",
@@ -69,36 +70,10 @@ const Overview = () => {
       {CardContents.map((content, idx) => (
         <m.div
           key={idx}
-          initial={{ opacity: 0, y: 200 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              opacity: {
-                duration: 0.5,
-                ease: "easeInOut",
-                delay: idx * 0.05,
-              },
-              y: {
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-                delay: idx * 0.05,
-              },
-            },
-          }}
-          exit={{
-            opacity: 0,
-            scale: 0.8,
-            transition: {
-              opacity: {
-                duration: 0.2,
-                ease: "easeInOut",
-              },
-              scale: {
-                duration: 0.5,
-              },
-            },
-          }}
+          variants={motionVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
           className={`${content.gridConfig} rounded-2xl bg-[#0e0e0e] border border-accent p-6`}
         >
           <content.component {...content.props} />

@@ -15,6 +15,7 @@ type OverviewState = {
   stakingAPR: number;
   inflation: number;
   supply: number;
+  bonded: number;
   communityPool: number;
 };
 
@@ -37,6 +38,7 @@ type OverviewAction = {
   setStakingAPR: (stakingAPR: number) => void;
   setInflation: (inflation: number) => void;
   setSupply: (supply: number) => void;
+  setBonded: (bonded: number) => void;
   setCommunityPool: (communityPool: number) => void;
 };
 
@@ -62,6 +64,7 @@ export const useOverviewStore = create<OverviewStore>((set) => ({
   stakingAPR: 0,
   inflation: 0,
   supply: 0,
+  bonded: 0,
   communityPool: 0,
   setLatestPrice: (latestPrice: number) => set({ latestPrice }),
   setPriceChange24: (priceChange24: number) => set({ priceChange24 }),
@@ -77,5 +80,6 @@ export const useOverviewStore = create<OverviewStore>((set) => ({
   setStakingAPR: (stakingAPR: number) => set({ stakingAPR }),
   setInflation: (inflation: number) => set({ inflation }),
   setSupply: (supply: number) => set({ supply }),
+  setBonded: (bonded: number) => set({ bonded }),
   setCommunityPool: (communityPool: number) => set({ communityPool }),
 }));

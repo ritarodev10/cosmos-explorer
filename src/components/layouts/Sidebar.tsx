@@ -1,6 +1,6 @@
 import cosmosLogo from "/cosmos.svg";
 import { Link, useLocation } from "react-router-dom";
-import { sidebarItems } from "@/config/sidebarData";
+import { sidebarItems } from "@/config/sidebar.config";
 import SidebarItem from "../ui/sidebar-item";
 import { Button } from "../ui/button";
 import { GithubIcon } from "../icons";
@@ -31,16 +31,29 @@ const Sidebar = () => {
               ))}
             </div>
             <div className="flex flex-col gap-3 items-center py-8 px-8">
-              <Avatar
-                name="Riza Rohman"
-                designation="Software Engineer"
-                image="/profile-pict.jpeg"
-              />
+              <a
+                href="https://linkedin.com/in/riza-rohman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Avatar
+                  name="Riza Rohman"
+                  designation="Software Engineer"
+                  image="/profile-pict.jpeg"
+                />
+              </a>
               <p className="text-muted text-sm">emailme@ritaro.dev</p>
-              <Button variant="sidebar">
-                <GithubIcon className="w-5 h-5" color="#161c24" />
-                Github Repo
-              </Button>
+
+              <a
+                href="https://github.com/ritarodev10/cosmos-explorer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="sidebar">
+                  <GithubIcon className="w-5 h-5" color="#161c24" />
+                  Github Repo
+                </Button>
+              </a>
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
 import { PriceChartDataType } from "@/stores/overview.store";
 import Chart from "react-apexcharts";
 
-type LineGraphProps = {
+type PriceChartProps = {
   chartData: PriceChartDataType;
 };
 
-const LineGraph = ({ chartData }: LineGraphProps) => {
+const PriceChart = ({ chartData }: PriceChartProps) => {
   const config = {
     options: {
       chart: {
@@ -103,4 +103,4 @@ const LineGraph = ({ chartData }: LineGraphProps) => {
   );
 };
 
-export default LineGraph;
+export default PriceChart;

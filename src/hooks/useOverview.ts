@@ -3,6 +3,7 @@ import {
   getCommunityPool,
   getInflation,
   getMarketData,
+  getStakingPool,
   getSupply,
   getValidatorStats,
 } from "@/api/overview.api";
@@ -33,6 +34,7 @@ export const useOverviewQuery = () => {
   const setStakingAPR = useOverviewStore((state) => state.setStakingAPR);
   const setInflation = useOverviewStore((state) => state.setInflation);
   const setSupply = useOverviewStore((state) => state.setSupply);
+  const setBonded = useOverviewStore((state) => state.setBonded);
   const setCommunityPool = useOverviewStore((state) => state.setCommunityPool);
 
   /* Start of Query API for Overview Data */
@@ -44,6 +46,11 @@ export const useOverviewQuery = () => {
   const { data: priceData, isLoading: loadingPrice } = useQuery({
     queryKey: ["price-data"],
     queryFn: () => getPriceData(),
+  });
+
+  const { data: poolData, isLoading: loadingPool } = useQuery({
+    queryKey: ["staking-pool"],
+    queryFn: () => getStakingPool(),
   });
 
   const { data: blockTimeData, isLoading: loadingBlockTime } = useQuery({
@@ -123,6 +130,10 @@ export const useOverviewQuery = () => {
       setSupply(Number(convertToStandardUnit(Number(supplyData.amount))));
     }
 
+    if (poolData) {
+      setBonded(Number(convertToStandardUnit(Number(poolData.bonded_tokens))));
+    }
+
     if (communityPoolData) {
       setCommunityPool(
         Number(convertToStandardUnit(Number(communityPoolData.amount)))
@@ -137,6 +148,7 @@ export const useOverviewQuery = () => {
     inflationData,
     supplyData,
     communityPoolData,
+    poolData,
   ]);
 
   const price = useOverviewStore((state) => ({
@@ -153,6 +165,7 @@ export const useOverviewQuery = () => {
   const inflation = useOverviewStore((state) => state.inflation);
   const stakingAPR = useOverviewStore((state) => state.stakingAPR);
   const supply = useOverviewStore((state) => state.supply);
+  const bonded = useOverviewStore((state) => state.bonded);
   const communityPool = useOverviewStore((state) => state.communityPool);
 
   return {
@@ -165,6 +178,7 @@ export const useOverviewQuery = () => {
     stakingAPR,
     inflation,
     supply,
+    bonded,
     loadingSupply,
     loadingStakingAPR,
     loadingInflation,

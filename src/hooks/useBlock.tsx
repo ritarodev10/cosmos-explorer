@@ -1,9 +1,9 @@
 import { getLatestBlockData, gettopBlocks } from "@/api/block.api";
 import { useOverviewStore } from "@/stores/overview.store";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 
-export const useBlockQuery = () => {
+export const useBlockQuery = (count: number = 10) => {
   const setLatestBlock = useOverviewStore((state) => state.setLatestBlock);
   const setChainId = useOverviewStore((state) => state.setChainId);
 
@@ -13,9 +13,14 @@ export const useBlockQuery = () => {
     refetchInterval: 5000,
   });
 
-  const { data: topBlocksData, isLoading: loadingtopBlocks } = useQuery({
-    queryKey: ["top10-blocks", { count: 10 }],
-    queryFn: () => gettopBlocks({ count: 10 }),
+  const {
+    data: topBlocksData,
+    isLoading: loadingBlocks,
+    isError: errorBlocks,
+  } = useQuery({
+    queryKey: ["top10-blocks", { count }],
+    queryFn: () => gettopBlocks({ count }),
+    placeholderData: keepPreviousData,
     refetchInterval: 5000,
   });
 
@@ -34,6 +39,7 @@ export const useBlockQuery = () => {
     latestBlock,
     chainId,
     loadingBlock,
-    loadingtopBlocks,
+    loadingBlocks,
+    errorBlocks,
   };
 };

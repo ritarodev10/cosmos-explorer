@@ -1,5 +1,5 @@
 import { ArrowUpIcon, CosmosAtomIcon } from "@/components/icons";
-import LineGraph from "@/components/ui/line-graph";
+import PriceChart from "@/components/modules/overview/PriceChart";
 import { useOverviewQuery } from "@/hooks/useOverview";
 import {
   formatCurrency,
@@ -10,15 +10,15 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { motion as m } from "framer-motion";
-import { useBlockQuery, usetopBlockQuery } from "@/hooks/useBlock";
+import { useBlockQuery } from "@/hooks/useBlock";
 import CopyIcon from "@/components/icons/copy.icon";
+import PieChart from "./PieChart";
 
 type CardProps = {
   heading?: string;
@@ -75,12 +75,31 @@ export const MarketDataCard = () => {
         </div>
       </div>
       <div className="">
-        <LineGraph chartData={priceChart} />
+        <PriceChart chartData={priceChart} />
       </div>
     </div>
   );
 };
 
+export const TokenomicsCard = () => {
+  const { supply, bonded } = useOverviewQuery();
+  return (
+    <div className="flex gap-4 items-center">
+      <div className="flex flex-col gap-6">
+        <h3 className="text-muted text-sm font-medium">Tokenomics</h3>
+        <div>
+          <h3 className="text-foreground text-xl font-semibold">{bonded}M</h3>
+          <h3 className="text-muted text-sm font-medium">Bonded</h3>
+        </div>
+        <div>
+          <h3 className="text-foreground text-xl font-semibold">{supply}M</h3>
+          <h3 className="text-muted text-sm font-medium">Supply</h3>
+        </div>
+      </div>
+      <PieChart bonded={bonded} supply={supply} />
+    </div>
+  );
+};
 export const ValidatorCard = () => {
   const { validatorStats, validatorPercent } = useOverviewQuery();
   return (
