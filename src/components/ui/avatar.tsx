@@ -70,10 +70,10 @@ export const Avatar = ({
             >
               <div className="absolute inset-x-1/2 -translate-x-1/2 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
               <div className="absolute left-1/2 -translate-x-1/2 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent h-px " />
-              <div className="font-bold text-neutral-400 relative z-30 text-base">
+              <div className="font-bold text-foreground relative z-30 text-base">
                 {name}
               </div>
-              <div className="text-neutral-400 text-xs">{designation}</div>
+              <div className="text-foreground text-xs">{designation}</div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -83,7 +83,7 @@ export const Avatar = ({
           width={100}
           src={image}
           alt={name}
-          className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-[#395848] hover:border-[#5be49b]  relative transition duration-500"
+          className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-primary-foreground hover:border-primary  relative transition duration-500"
         />
       </div>
     </>

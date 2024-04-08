@@ -58,7 +58,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, idx, location }) => {
       <AnimatePresence>
         {hoveredIndex === idx && (
           <motion.span
-            className="absolute inset-0 h-12 w-full bg-neutral-900 bg-opacity-65 backdrop-blur-sm rounded-lg"
+            className="absolute inset-0 h-12 w-full bg-neutral-900 rounded-xl"
             layoutId="hoverBackground"
             initial={{ opacity: 0 }}
             animate={{
@@ -74,17 +74,18 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, idx, location }) => {
       </AnimatePresence>
       <div
         className={`${
-          isActive &&
-          "bg-neutral-950 backdropblur-[2px] hover:bg-[#0c1e1e] border "
-        } flex gap-4 px-3 rounded-xl h-12 items-center relative hover:text-neutral-950 border-[#3a4b42] transition-all duration-100 ease-in-out z-20`}
+          isActive
+            ? "bg-background backdrop-blur-[2px] hover:bg-primary-foreground border border-[#3a4b42]"
+            : "border-transparent"
+        } flex gap-4 px-3 rounded-xl h-12 items-center relative hover:text-background transition-all duration-300 ease-in-out z-20`}
       >
         <item.icon
           className="w-6 h-6"
-          color={isActive ? "#5be49b" : "#737373"}
+          color={isActive ? "#5be49b" : "#525252"}
         />
         <div
           className={`${
-            isActive ? "text-[#5be49b]" : "text-neutral-500"
+            isActive ? "text-primary" : "text-muted"
           } text-sm font-semibold`}
         >
           {item.name}

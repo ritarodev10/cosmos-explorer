@@ -1,10 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Request } from "@/types/api-request.type";
 import axios, { AxiosResponse, Method } from "axios";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Request<TParams = any, TData = any, TResult = any> = (
+  params?: TParams,
+  data?: TData
+) => Promise<TResult>;
 
 function createRequest<TParams = any, TData = any, TResult = any>(
   url: string,
-  method: Method
+  method: Method,
+  headers: Record<string, string> = {}
 ): Request<TParams, TData, TResult> {
   return async (
     params: TParams = {} as TParams,
@@ -16,6 +22,7 @@ function createRequest<TParams = any, TData = any, TResult = any>(
         url,
         params,
         data,
+        headers,
       });
       return response.data;
     } catch (error: any) {
@@ -27,5 +34,4 @@ function createRequest<TParams = any, TData = any, TResult = any>(
     }
   };
 }
-
 export default createRequest;

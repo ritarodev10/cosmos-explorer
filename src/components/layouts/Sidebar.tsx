@@ -11,8 +11,8 @@ const Sidebar = () => {
 
   return (
     <div className="h-screen border-r border-dashed fixed border-neutral-800 w-64 z-10">
-      <div className="h-full w-full bg-neutral-950  bg-dot-white/[0.2] relative">
-        <div className="absolute pointer-events-none inset-0 bg-neutral-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="h-full w-full bg-background  bg-dot-white/[0.2] relative">
+        <div className="absolute pointer-events-none inset-0 bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="h-full flex flex-col z-30 relative">
           <div className="p-8">
             <Link to="/">
@@ -36,7 +36,7 @@ const Sidebar = () => {
                 designation="Software Engineer"
                 image="/profile-pict.jpeg"
               />
-              <p className="text-neutral-500 text-sm">emailme@ritaro.dev</p>
+              <p className="text-muted text-sm">emailme@ritaro.dev</p>
               <Button variant="sidebar">
                 <GithubIcon className="w-5 h-5" color="#161c24" />
                 Github Repo

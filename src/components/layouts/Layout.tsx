@@ -6,14 +6,14 @@ import Detail from "./Detail";
 
 const Layout = () => {
   return (
-    <div className="h-screen w-full bg-neutral-950 relative antialiased overflow-auto">
+    <div className="h-screen w-full bg-background relative antialiased overflow-auto">
       <div>
         <div>
           <Sidebar />
         </div>
         <div className="flex flex-col ml-64">
           <Navbar />
-          <main className="pt-20 px-10">
+          <main className="container pt-20 pb-10 px-10">
             <Outlet />
           </main>
         </div>

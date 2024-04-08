@@ -4,6 +4,8 @@ import ProposalIcon from "./proposal.icon";
 import TransactionIcon from "./transaction.icon";
 import ValidatorIcon from "./validator.icon";
 import GithubIcon from "./github.icon";
+import CosmosAtomIcon from "./cosmos-atom.icon";
+import ArrowUpIcon from "./arrow-up.icon";
 
 export {
   OverviewIcon,
@@ -12,4 +14,6 @@ export {
   TransactionIcon,
   ValidatorIcon,
   GithubIcon,
+  CosmosAtomIcon,
+  ArrowUpIcon,
 };
