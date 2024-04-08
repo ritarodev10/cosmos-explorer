@@ -139,6 +139,8 @@ export const useOverviewQuery = () => {
         Number(convertToStandardUnit(Number(communityPoolData.amount)))
       );
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     marketData,
     priceData,

@@ -11,7 +11,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useValidatorQuery } from "@/hooks/useValidator";
 import { formatNumber } from "@/utils/common.utils";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion as m } from "framer-motion";
 import { motionVariants } from "@/config/animation.config";
 

@@ -10,7 +10,6 @@ import {
 import { motionVariants } from "@/config/animation.config";
 import useTransaction from "@/hooks/useTransaction";
 import { motion as m } from "framer-motion";
-import React from "react";
 
 const headers = [
   { text: "Height", width: "100px" },

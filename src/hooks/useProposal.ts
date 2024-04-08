@@ -23,6 +23,7 @@ export const useProposalQuery = () => {
 
       setProposalData(proposalData);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const proposalQueryData = useProposalStore((state) => ({

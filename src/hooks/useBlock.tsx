@@ -29,6 +29,7 @@ export const useBlockQuery = (count: number = 10) => {
       setLatestBlock(topBlocksData[0].height);
       setChainId(latestBlockData.block.header.chain_id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [latestBlockData, topBlocksData]);
 
   const latestBlock = useOverviewStore((state) => state.latestBlock);

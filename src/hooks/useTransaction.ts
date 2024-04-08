@@ -36,6 +36,7 @@ const useTransaction = () => {
     }));
 
     setTransactionData(txData);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [latestBlockData]);
 
   const transactionData = useTransactionStore((state) => state.transactionData);

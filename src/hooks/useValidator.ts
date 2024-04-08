@@ -28,6 +28,7 @@ export const useValidatorQuery = () => {
 
       setValidatorData(validatorData);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const validatorQueryData = useValidatorStore((state) => ({
