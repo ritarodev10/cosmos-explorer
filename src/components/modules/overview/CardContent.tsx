@@ -155,16 +155,6 @@ export const BlocksTableCard = () => {
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
-    try {
-      const successful = document.execCommand("copy");
-      const msg = successful ? "Copied successfully!" : "Failed to copy!";
-      onCopy?.(msg);
-    } catch (err) {
-      onCopy?.("Failed to copy!");
-    } finally {
-      document.body.removeChild(textArea);
-    }
   };
 
   return (

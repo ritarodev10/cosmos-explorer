@@ -1,5 +1,5 @@
 import { useOverviewQuery } from "@/hooks/useOverview";
-import { AnimatePresence, motion as m } from "framer-motion";
+import { motion as m } from "framer-motion";
 import {
   BlockCard,
   BlocksTableCard,

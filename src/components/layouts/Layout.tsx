@@ -2,7 +2,6 @@ import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { BackgroundBeams } from "../ui/background-beam";
-import Detail from "./Detail";
 
 const Layout = () => {
   return (
@@ -17,7 +16,6 @@ const Layout = () => {
             <Outlet />
           </main>
         </div>
-        {/* <Detail /> */}
         <BackgroundBeams />
       </div>
     </div>

@@ -19,6 +19,8 @@ const PieChart = ({ bonded, supply }: PieChartProps) => {
       labels: ["Bonded", "Supply"],
 
       dataLabels: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         formatter(val, opts) {
           const name = opts.w.globals.labels[opts.seriesIndex];
           return [name, val.toFixed(1) + "%"];

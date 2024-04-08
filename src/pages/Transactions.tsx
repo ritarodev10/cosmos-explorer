@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/table";
 import { motionVariants } from "@/config/animation.config";
 import useTransaction from "@/hooks/useTransaction";
-import { truncateHash } from "@/utils/common.utils";
 import { motion as m } from "framer-motion";
 import React from "react";
 
@@ -28,16 +27,6 @@ const Transactions = () => {
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
-    try {
-      const successful = document.execCommand("copy");
-      const msg = successful ? "Copied successfully!" : "Failed to copy!";
-      onCopy?.(msg);
-    } catch (err) {
-      onCopy?.("Failed to copy!");
-    } finally {
-      document.body.removeChild(textArea);
-    }
   };
   return (
     <m.div

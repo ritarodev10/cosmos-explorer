@@ -48,7 +48,7 @@ export const useOverviewQuery = () => {
     queryFn: () => getPriceData(),
   });
 
-  const { data: poolData, isLoading: loadingPool } = useQuery({
+  const { data: poolData } = useQuery({
     queryKey: ["staking-pool"],
     queryFn: () => getStakingPool(),
   });
