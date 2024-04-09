@@ -98,7 +98,7 @@ const PriceChart = ({ chartData }: PriceChartProps) => {
       options={config.options}
       series={series}
       type="area"
-      style={{ margin: "-10px -10px -40px -20px" }}
+      style={{ margin: "-10px -10px -40px -20px", height: "200px" }}
     />
   );
 };

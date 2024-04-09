@@ -38,7 +38,7 @@ export const MarketDataCard = () => {
   const { priceChart, price } = useOverviewQuery();
 
   return (
-    <div className="grid lg:grid-cols-2 gap-4">
+    <div className="grid sm:grid-cols-2 gap-4">
       <div className="w-full flex flex-col gap-2 md:pt-3">
         <div className="w-full flex justify-between items-center">
           <div className="flex gap-4 items-center">
@@ -84,16 +84,18 @@ export const MarketDataCard = () => {
 export const TokenomicsCard = () => {
   const { supply, bonded } = useOverviewQuery();
   return (
-    <div className="flex gap-4 items-center">
-      <div className="flex flex-col gap-6">
+    <div className="w-full flex gap-2 md:gap-4 items-center">
+      <div className="flex flex-col gap-3">
         <h3 className="text-muted text-sm font-medium">Tokenomics</h3>
-        <div>
-          <h3 className="text-foreground text-xl font-semibold">{bonded}M</h3>
-          <h3 className="text-muted text-sm font-medium">Bonded</h3>
-        </div>
-        <div>
-          <h3 className="text-foreground text-xl font-semibold">{supply}M</h3>
-          <h3 className="text-muted text-sm font-medium">Supply</h3>
+        <div className="flex-1 flex flex-col xs:flex-row xs:justify-around">
+          <div>
+            <h3 className="text-foreground text-xl font-semibold">{bonded}M</h3>
+            <h3 className="text-muted text-sm font-medium">Bonded</h3>
+          </div>
+          <div>
+            <h3 className="text-foreground text-xl font-semibold">{supply}M</h3>
+            <h3 className="text-muted text-sm font-medium">Supply</h3>
+          </div>
         </div>
       </div>
       <PieChart bonded={bonded} supply={supply} />

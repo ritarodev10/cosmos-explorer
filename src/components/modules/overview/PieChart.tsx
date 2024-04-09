@@ -39,7 +39,7 @@ const PieChart = ({ bonded, supply }: PieChartProps) => {
       options={config.options}
       series={config.series}
       type="pie"
-      style={{ marginRight: "-20px", width: "100%" }}
+      style={{ margin: "0 -20px 0 -20px", maxWidth: "250px" }}
     />
   );
 };

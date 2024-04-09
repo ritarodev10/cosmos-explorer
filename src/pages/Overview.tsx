@@ -15,17 +15,17 @@ const Overview = () => {
   const CardContents = [
     {
       title: "Market Cap",
-      gridConfig: "xl:col-span-8",
+      gridConfig: "col-span-12 md:col-span-8",
       component: MarketDataCard,
     },
     {
       title: "Tokenomics",
-      gridConfig: "xl:col-span-4",
+      gridConfig: "col-span-12 sm:col-span-6 md:col-span-4",
       component: TokenomicsCard,
     },
     {
       title: "Validator Stats",
-      gridConfig: "xl:col-span-6",
+      gridConfig: "col-span-12 sm:col-span-6",
       component: ValidatorCard,
     },
     {
@@ -65,7 +65,7 @@ const Overview = () => {
   ];
 
   return (
-    <div className="relative z-20 grid gap-4 lg:grid-cols-12 md:gap-5">
+    <div className="relative z-20 grid gap-4 grid-cols-12 md:gap-5">
       {CardContents.map((content, idx) => (
         <m.div
           key={idx}
