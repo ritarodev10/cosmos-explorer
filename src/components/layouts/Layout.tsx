@@ -16,7 +16,7 @@ const Layout = () => {
             <Outlet />
           </main>
         </div>
-        <BackgroundBeams />
+        <BackgroundBeams className="hidden lg:block" />
       </div>
     </div>
   );

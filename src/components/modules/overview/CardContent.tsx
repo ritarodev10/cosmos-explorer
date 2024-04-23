@@ -87,7 +87,7 @@ export const TokenomicsCard = () => {
     <div className="w-full flex gap-2 md:gap-4 items-center">
       <div className="flex flex-col gap-3">
         <h3 className="text-muted text-sm font-medium">Tokenomics</h3>
-        <div className="flex-1 flex flex-col xs:flex-row xs:justify-around">
+        <div className="flex-1 flex flex-col">
           <div>
             <h3 className="text-foreground text-xl font-semibold">{bonded}M</h3>
             <h3 className="text-muted text-sm font-medium">Bonded</h3>
